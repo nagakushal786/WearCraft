@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import router from "./routes/routes.dalle.js";
-import path from "path";
 
 dotenv.config();
 
@@ -13,10 +12,8 @@ app.use(express.json({limit: "50mb"}));
 
 app.use("/api/v1/dalle", router);
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
-
-app.get("*", (req, res)=> {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+app.get("/", (req, res)=> {
+    return res.status(200).send("Welcome to DALL-E");
 });
 
 app.listen(8080, ()=> {
