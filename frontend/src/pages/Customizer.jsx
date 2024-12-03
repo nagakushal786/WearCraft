@@ -161,6 +161,18 @@ const Customizer = () => {
                       handleClick={()=> handleActiveFilterTab(tab.name)}
                     />
                 ))}
+
+                <motion.div
+                  className="tab-btn"
+                  {...fadeAnimation}
+                  onClick={downloadCanvasToImage}
+                >
+                  <img
+                    src={download}
+                    alt="Download"
+                    className="w-9 h-9"
+                  />
+                </motion.div>
               </motion.div>
             </>
         )}
