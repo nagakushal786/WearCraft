@@ -25,10 +25,52 @@ html {
 
 .home-content {
   @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+  max-height: calc(100vh - 200px);
 }
 
 .head-text {
-  @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
+  @apply xl:leading-[11rem] leading-[7rem] font-black text-black;
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: clamp(5rem, 11vw, 11rem);
+}
+
+/* Responsive adjustments for shorter screens */
+@media (max-height: 800px) {
+  .head-text {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: clamp(4rem, 9vw, 8rem);
+  }
+  
+  .home-content {
+    @apply gap-6;
+  }
+}
+
+@media (max-height: 700px) {
+  .head-text {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: clamp(3.5rem, 8vw, 6rem);
+  }
+  
+  .home-content {
+    @apply gap-4;
+    max-height: calc(100vh - 150px);
+  }
+  
+  .home {
+    @apply xl:py-6 xl:px-28 sm:p-6 p-4;
+  }
+}
+
+@media (max-height: 600px) {
+  .head-text {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: clamp(3rem, 7vw, 5rem);
+  }
+  
+  .home-content {
+    @apply gap-3;
+  }
 }
 
 .download-btn {

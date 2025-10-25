@@ -26,8 +26,8 @@ const Home = () => {
                         </h1>
                     </motion.div>
 
-                    <motion.div {...headContentAnimation} className="flex flex-col gap-5">
-                        <p className="max-w-md font-normal text-white text-base">
+                    <motion.div {...headContentAnimation} className="flex flex-col gap-5 mt-6">
+                        <p className="max-w-md font-normal text-white text-base leading-relaxed">
                         Design your own one-of-a-kind shirt with our cutting-edge 3D customization tool. 
                         {" "}<strong>Let your creativity run wild</strong> and craft a style that&apos;s uniquely yours.
                         </p>
